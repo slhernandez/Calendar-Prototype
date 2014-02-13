@@ -1,0 +1,291 @@
+@import './common'
+@import './calendar-bgimg'
+@import './calendar'
+@import './article'
+
+.metro-theme
+  background #C9CEC9
+  font-family 'Futura'
+  .agenda
+    font-family 'Futura'
+    .mobile-week
+      background #C9CEC9
+      .mobile-heading
+        background #777
+      ul.week
+        background #C9CEC9
+        li.focus
+          .mobile-day
+            background #777
+          .mobile-date
+            background #777
+    .midsize-calendar
+      background #C9CEC9
+      .calendar
+        tbody
+          tr
+            td
+              span.occupied
+                background #777
+    ul.agenda-items
+      li.item-date
+        background #777
+
+
+.portfolio-theme
+  background #EEE
+  color #333
+  font-family "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif
+  .agenda
+    font-family "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif
+    .mobile-week
+      background #51738a
+      .mobile-heading
+        background #51738A
+      ul.week
+        background #51738a
+        li
+          p
+            color #333
+            background #EEE
+        li.focus
+          border-top none
+          .mobile-day
+            background #51738A
+          .mobile-date
+            background #51738A
+    .midsize-calendar
+      background #EEE
+      .calendar
+        tbody
+          tr
+            td
+              span.occupied
+                background #51738A
+              span.selected
+                background #EC5459
+    ul.agenda-items
+      li
+        border-bottom none
+      li.item-date
+        background #51738A
+        color white
+        border-bottom none
+        rounded-corners(10px)
+      li.agenda-item
+        .expandItem
+          font-size 80%
+          p
+            color #333
+            
+.business-theme
+  .calendar-container
+    .calendar
+      -webkit-box-shadow 0 2px 5px rgba(0, 0, 0, 0.2)
+      -moz-box-shadow 0 2px 5px rgba(0, 0, 0, 0.2)
+      box-shadow 0 2px 5px rgba(0, 0, 0, 0.2)
+      caption
+        border-left 1px solid #CCC
+        border-right 1px solid #CCC
+        border-top 1px solid #CCC
+      thead
+        tr
+          display none
+      tbody
+        tr
+          td
+            border-right 1px solid #CCC
+            border-bottom 1px solid #CCC
+            width 45px
+            height 45px
+          td:first-child
+            border-left 1px solid #CCC
+          td.select
+            background #777
+            color #FAFAFA
+            border none
+            border-right 1px solid #CCC
+            border-bottom 1px solid #CCC
+            rounded-corners(0px)
+            
+  background #FFFFFF
+  font-family 'Helvetica'
+  .agenda
+    font-family 'Helvetica'
+    .midsize-calendar
+      border-bottom none
+      .calendar
+        caption
+          border-top 1px solid #CCC
+          border-right 1px solid #CCC
+          border-left 1px solid #CCC
+          border-bottom none
+        thead
+          tr
+            th
+              text-align center
+              text-transform uppercase
+              border-top 1px solid #CCC
+              border-bottom 1px solid #CCC
+              border-left 1px solid #CCC
+              padding-bottom .8166em
+              &:last-child
+                border-right 1px solid #CCC
+        tbody
+          tr
+            td
+              border 1px solid #CCC
+              span.occupied
+                background #333
+                color white
+                height: 100%
+                width: 100%
+              span.selected
+                background #1A1A1A
+
+    ul.agenda-items
+      li.item-date
+        background #333
+      
+.studio-theme
+  background #1A1A1A
+  font-family "Futura"
+  .calendar-container
+    color #FAFAFA
+    .calendar
+      -webkit-box-shadow 0 2px 5px rgba(0, 0, 0, 0.2)
+      -moz-box-shadow 0 2px 5px rgba(0, 0, 0, 0.2)
+      box-shadow 0 2px 5px rgba(0, 0, 0, 0.2)
+      caption
+        border-left 1px solid #2F2F2F
+        border-right 1px solid #2F2F2F
+        border-top 1px solid #2F2F2F
+        border-bottom 1px solid #2F2F2F
+        color #F66
+
+      thead
+        tr
+          display none
+      tbody
+        tr
+          td
+            border-right 1px solid #2F2F2F
+            border-bottom 1px solid #2F2F2F
+            width 45px
+            height 45px
+          td:first-child
+            border-left 1px solid #2F2F2F
+          td.select
+            background #2F2F2F
+            color #F66
+            border none
+            border-right 1px solid #2F2F2F
+            border-bottom 1px solid #2F2F2F
+            rounded-corners(0px)
+    .filter h3
+      border-bottom 1px solid #2F2F2F
+  .agenda
+    border 1px solid #2F2F2F
+    font-family "Futura"
+    .mobile-week
+      background #1A1A1A
+      .mobile-heading
+        background #2A2A2A
+        color #F66
+      ul.week
+        li
+          border-right: 1px solid #2A2A2A;
+          p
+            color #F66
+            background #1A1A1A
+        li.focus
+          border-top none
+          .mobile-day
+            background #2A2A2A 
+          .mobile-date 
+            background #2A2A2A
+    .midsize-calendar
+      border-bottom none
+      background #1A1A1A
+      .calendar
+        caption
+          border-top 1px solid #2F2F2F
+          border-right 1px solid #2F2F2F
+          border-left 1px solid #2F2F2F
+          border-bottom none
+          color #F66
+          span
+            background url(midsize-cal-white) 50% 50% no-repeat
+            background-size 30px
+            cursor pointer
+            height 30px
+            position relative
+            top -6px
+            width 55px 
+          span.next
+            background url(midsize-cal-white) 50% 50% no-repeat
+            background-size 30px
+            float right
+            -webkit-transform rotate(180deg)
+            -moz-transform rotate(180deg)
+            transform rotate(180deg)
+            &:hover
+              opacity 0.6
+          span.prev
+            float left
+            &:hover
+              opacity 0.6
+        thead
+          tr
+            th
+              border-top 1px solid #2F2F2F
+              border-bottom 1px solid #2F2F2F
+              border-left 1px solid #2F2F2F
+              color white
+              padding-bottom .8166em
+              text-align center
+              text-transform uppercase
+              &:last-child
+                border-right 1px solid #2F2F2F
+        tbody
+          tr
+            td
+              border 1px solid #2F2F2F
+              color white
+              span.occupied
+                background #2F2F2F
+                border 1px solid #1A1A1A
+                color white
+                height: 100%
+                width: 100%
+                color white
+              .agenda-mark 
+                border-color transparent transparent #F66 transparent
+            td.select
+              background #2A2A2A
+    h1
+      color #FAFAFA
+    ul.agenda-items
+      color #FAFAFA
+      li
+        border-bottom 1px solid #333
+      li.item-date
+        color #F66
+        background #2A2A2A
+        font-size 120%
+        padding 10px 0 5px 25px
+      li.agenda-item
+        .expandItem
+          font-size 80%
+          p
+            color #FAFAFA
+            span.date,
+            span.time
+              color #F66
+            span
+              color #777
+          p.notes
+            font-size 110%
+            color #FAFAFA
+
+

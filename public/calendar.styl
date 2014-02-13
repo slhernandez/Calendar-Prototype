@@ -1,0 +1,621 @@
+@import './common'
+@import './calendar-bgimg'
+
+*, *:after, *:before 
+  -webkit-box-sizing border-box
+  -moz-box-sizing border-box
+  box-sizing border-box
+
+
+[class*='col-']
+  float none
+  padding-right 20px
+
+[class*='col-']:last-of-type
+  padding-right 0
+
+.col-2-3 
+  width 100%
+
+.col-1-2 
+  width 100%
+
+.col-1-3
+  width 100% 
+
+.col-1-4 
+  width 100%
+
+.col-1-8
+  width 100% 
+
+.cal-grid:after,
+.grid:after
+  content ""
+  display table
+  clear both
+  width 100%
+
+.grid-pad
+  padding 0
+
+.container
+  margin 0 auto
+
+.calendar-container
+  display none
+.cal-heading
+  display none
+
+.agenda
+  font-family 'Helvetica Neue', Helvetica, Arial, sans-serif
+  .midsize-calendar
+    display none
+  .mobile-week
+    background white
+    font-family light-family
+    top 0
+    left 0
+    width 100% 
+    z-index 13
+    &.fixed
+      position fixed
+      top 0
+    .mobile-heading
+      font-size 150%
+      background #333
+      color white
+      padding 10px 0
+      text-align center
+    .week-wrap
+      overflow-x scroll
+      overflow-y hidden
+      white-space nowrap
+      -webkit-overflow-scrolling touch
+      ul.week
+        clearfix()
+        width 100%
+        li
+          background -webkit-linear-gradient(top, white 0%, #F4F4F4 100%)
+          border-right: 1px solid #CCC;
+          display inline-block
+          float none
+          text-align center
+          width 20% 
+          .mobile-day
+            color #999
+            font-weight 400
+            font-size 120%
+            padding-top 10px
+            text-transform uppercase
+          .mobile-date
+            font-size 150%
+            font-weight 200
+            padding 15px 0 25px 0
+          &:last-child
+            border-right none
+          &:first-child
+            border-right none
+        .focus
+          //box-shadow 5px 3px 5px rgba(0, 0, 0, 0.3)
+          border none
+          .mobile-day
+            background #333
+            padding-top 10px
+            color white
+          .mobile-date
+            font-size 155%
+            background #333
+            color white
+            text-shadow -1px -1px 1px #24292B
+  h1
+    display none
+    font-weight 600
+    font-size 150%
+    border-bottom 1px solid #CCC
+    padding-bottom 15px
+    margin-top 140px
+  ul.agenda-items
+    padding 20px 20px
+    li.item-date,
+    li.agenda-item
+      border-bottom 1px solid #ccc
+      cursor pointer
+    li.item-date
+      background #333
+      color #FAFAFA
+      font-size 110%
+      font-weight 600
+      padding 5px 0 5px 25px 
+      span.full-date
+        float right
+        margin-right 20px
+    li.select
+      //color #FF4949
+    li.agenda-item
+      font-size 100%
+      font-weight 400
+      padding 10px 0 10px 0
+      margin-left 0
+      margin-bottom 0
+      .minus-icon
+        background url(minus-icon) 50% 50% no-repeat
+        background-color #EEE
+        background-size 8px
+        cursor pointer
+        border 1px solid #CCC
+        rounded-corners(2px)
+        opacity 0.7
+        height 15px
+        width 16px
+        float left
+        margin-right 10px
+        &:hover
+          background-color #CCC
+      .plus-icon
+        background url(plus-icon) 50% 50% no-repeat
+        background-color #EEE
+        cursor pointer
+        background-size 8px
+        border 1px solid #CCC
+        rounded-corners(2px)
+        opacity 0.7
+        height 15px
+        width 16px
+        float left
+        margin-right 10px
+        &:hover
+          background-color #CCC
+      .agenda-time
+        float right
+        margin-right 20px
+      .expandItem
+        display none
+        margin 20px auto 0px auto
+        width 95%
+        p 
+          color #777
+          font-weight 600
+          margin-bottom 5px
+          //width 30%
+          width 200px
+          span
+            float right
+            color #333
+            text-align left
+            &.time
+              margin-right 10px
+        .notes-label
+          margin-top 20px
+        .notes
+          font-weight 400
+          padding-right 30px
+          width 100%
+    li:last-child
+      margin-bottom 25px
+
+.filter
+  margin 50px auto
+  width 220px
+  h3
+    font-size 150%
+    padding-bottom 10px
+    border-bottom 1px solid #CCC
+  ul.staff
+    margin-top 20px
+    li
+      cursor pointer
+      position relative
+      p
+        cursor pointer
+        font-size 125%
+        margin 35px 0
+        margin-left 50px
+      .evan
+        background url(evan-avatar) 50% 50% no-repeat
+        background-size 40px
+        -webkit-box-shadow 0 1px 1px rgba(0, 0, 0, 0.15)
+        width 40px
+        height 40px
+        position absolute
+        top -10px
+        rounded-corners(200px)
+      .molly
+        background url(molly-avatar) 50% 50% no-repeat
+        background-size 40px
+        -webkit-box-shadow 0 1px 1px rgba(0, 0, 0, 0.15)
+        width 40px
+        height 40px
+        position absolute
+        top -10px
+        rounded-corners(200px)
+      .patrick
+        background url(patrick-avatar) 50% 50% no-repeat
+        background-size 40px
+        -webkit-box-shadow 0 1px 1px rgba(0, 0, 0, 0.15)
+        width 40px
+        height 40px
+        position absolute
+        top -10px
+        rounded-corners(200px)
+      .henry
+        background url(henry-avatar) 50% 50% no-repeat
+        background-size 40px
+        -webkit-box-shadow 0 1px 1px rgba(0, 0, 0, 0.15)
+        width 40px
+        height 40px
+        position absolute
+        top -10px
+        rounded-corners(200px)
+      .highlight
+        display none
+        background rgba(0,0,0,0.15)
+        width 140px
+        height 50px
+        position absolute
+        top -15px
+        left -6px 
+        rounded-corners(5px)
+        border 1px solid #333
+      .bio-popover-container
+        display block
+        .bio-popover-border-arrow
+          border-color transparent #CCC transparent transparent
+          border-style solid
+          border-width 16px
+          height 0
+          width 0
+          position absolute
+          z-index 12
+          top -6px 
+          left 118px
+        .bio-popover-arrow
+          border-color transparent #F6F6F6 transparent transparent
+          border-style solid
+          border-width 15px
+          height 0
+          width 0
+          position absolute
+          z-index 12
+          top -5px
+          left 121px
+        .bio-popover
+          background -webkit-linear-gradient(top,white 0%,#F4F4F4 100%)
+          box-shadow(0 2px 5px rgba(0, 0, 0, 0.2))
+          border 1px solid #CCC
+          position absolute
+          top -80px
+          left 150px
+          width 300px
+          z-index 11
+          .name
+            clearfix()
+            width 100%
+            .popover-avatar
+              background url(molly-avatar) no-repeat
+              background-size 75px
+              box-shadow(0 1px 2px rgba(0, 0, 0, 0.3))
+              rounded-corners(200px)
+              width 75px
+              height 75px
+              float left
+              width 25%
+              margin-left 10px
+              margin-top 10px
+            h3
+              border-bottom none
+              color #333 
+              font-size 175%
+              font-weight 200
+              padding 0
+              float left
+              width 65%
+              margin-top 10px
+              margin-left 15px
+            p.org
+              margin 0
+              margin-left 100px
+              color #777
+              font-size 110%
+              font-weight 600
+              margin-top 40px
+            .bio-label
+              clear both
+              color #777
+              display block
+              font-weight 600
+              font-size 120% 
+              margin-left 11px
+              margin-top 40px
+            .popover-bio
+              color #777
+              font-weight 400
+              font-size 100%
+              margin 0
+              margin-left 6px
+              padding 5px 10px 10px 5px
+        
+  .more-btn
+    text-decoration none
+    font-size 120%
+    rounded-corners(4px)
+    padding 5px 5px 5px 5px 
+    background #333
+    font-weight 600
+    color #FAFAFA
+    display block
+    margin 0 auto
+    text-align center
+    width 75px
+    -webkit-box-shadow 0 1px 1px rgba(0, 0, 0, 0.15)
+    -moz-box-shadow 0 1px 1px rgba(0, 0, 0, 0.15)
+    box-shadow 0 1px 1px rgba(0, 0, 0, 0.15)
+    &:hover
+      background whitesmoke
+      border 1px solid #333
+      color #333
+      -webkit-transition all .3s ease-out
+      -moz-transition all .3s ease-out
+      transition all .3s ease-out
+    &:active
+      position relative
+      top 1px
+
+//-----------------------------------------------------------
+// apply for _every_ viewport >= 569px (until overridden)
+//-----------------------------------------------------------
+@media only screen and (min-width: 568px)
+  .grid-pad
+    padding 0 0 0 0
+  .mobile-week
+    display none
+  .agenda
+    .midsize-calendar
+      background white
+      display block
+      margin 0 auto
+      width 95%
+      z-index 11
+      .calendar
+        margin 20px auto
+        line-height 1.25em
+        border-collapse collapse
+        border-spacing 0
+        width 100%
+        caption
+          //border-bottom 2px solid #333
+          //border-top 2px solid #333
+          border-top 1px solid #CCC
+          border-right 1px solid #CCC
+          border-left 1px solid #CCC
+          border-bottom 1px solid #CCC
+          font-size 185%
+          padding-top 13px
+          position relative
+          text-align center
+          span
+            background url(midsize-cal-arrow) 50% 50% no-repeat
+            background-size 30px
+            cursor pointer
+            height 30px
+            position relative
+            top -6px
+            width 55px 
+          span.next
+            background url(midsize-cal-arrow) 50% 50% no-repeat
+            background-size 30px
+            float right
+            -webkit-transform rotate(180deg)
+            -moz-transform rotate(180deg)
+            transform rotate(180deg)
+            &:hover
+              opacity 0.6
+          span.prev
+            float left
+            &:hover
+              opacity 0.6
+        thead
+          tr
+            display table-row
+            th
+              border-bottom 1px solid #CCC
+              border-left 1px solid #CCC
+              display table-cell !important
+              margin 0
+              width 14.2857%
+              //padding .8166em .4166em 1.8166em .4166em
+              padding-bottom .8166em
+              padding-top .8166em
+              vertical-align top
+              text-align center
+              text-transform uppercase
+              &:last-child
+                border-right 1px solid #CCC
+        tbody
+          tr
+            display table-row
+            &:last-child
+              border-bottom none
+            td
+              border 1px solid #CCC
+              cursor pointer
+              display table-cell !important
+              margin 0
+              width 14.2857%
+              padding 0.4166em
+              vertical-align top
+              text-align right
+              height 6.25em
+              position relative
+              &:hover
+                background #FAFAFA
+              .day
+                display block
+                float right
+                margin 0
+                font-weight normal
+                margin-top 10px
+                margin-right 5px
+              .agenda-mark 
+                border-color transparent transparent #1F1F1F
+                border-style solid
+                border-width 16px
+                height 0 
+                width 0
+                position absolute
+                top -16px
+                left -16px
+                -webkit-transform rotate(315deg)
+                -moz-transform rotate(315deg)
+                -o-transform rotate(315deg)
+                transform rotate(315deg)
+
+              span.occupied
+                background rgba(73, 153, 207, 1.0)
+                position absolute
+                color #FFFFFF
+                cursor pointer
+                top 0px
+                right 0px
+                height 4.25em
+                width 54.286%
+            td.select
+              background #EEE
+            td.off
+              color #777
+            td.highlight:after
+              content ""
+              position absolute
+              z-index 11
+              top 0
+              left 20px
+              right 0 
+              bottom 20px
+              background rgba(73,153, 207, 0.7)
+              color white
+    ul.agenda-items
+      margin 20px auto 0 auto
+      width 95%
+    h1
+      display none
+
+//-----------------------------------------------------------
+// apply for _every_ viewport >= 1024px (until overridden)
+//-----------------------------------------------------------
+@media only screen and (min-width: 1024px)
+
+  .grid
+    border-top 1px solid #CCC
+
+  .grid-pad
+    padding 0 0 0 20px
+
+
+  .agenda .midsize-calendar
+    display none
+    .midsize-calendar
+      top 232px !important
+
+  [class*='col-']
+    float left
+    padding-right 20px
+
+  [class*='col-']:last-of-type
+    padding-right 25px
+
+  .col-2-3 
+    width 66.66%
+
+  .col-1-2 
+    width 50%
+
+  .col-1-3
+    width 33.33%
+
+  .col-1-4 
+    width 25%
+
+  .col-1-8
+    width 12.5%
+
+  .agenda
+    border-left 1px solid #CCC
+    padding-left 30px
+    .mobile-week
+      display none
+    h1 
+      display block
+      margin-top 0
+
+  .cal-heading
+    display block
+    margin-top 20px
+    h1
+      font-size 200%
+      font-weight 200
+      text-align center
+      border-top 1px solid #CCC
+      border-bottom 1px solid #CCC
+      padding-top 20px
+      padding-bottom 20px
+
+  .calendar-container
+    display block
+    .calendar
+      margin 29px auto 0 auto
+      .prev
+        float left
+      .next
+        float right
+      caption
+        font-size font-size-16
+        font-weight 400
+        text-align center
+        padding 10px 0
+        border-bottom 1px solid #CCC
+        border-top 1px solid #CCC
+        span 
+          background url(calendar-nav-arrow) 50% 50% no-repeat
+          background-size 20px
+          cursor pointer
+          width 20px 
+          height 20px
+          &:hover
+            opacity 0.6
+        span.prev
+          -webkit-transform rotate(180deg)
+          -moz-transform rotate(180deg)
+          transform rotate(180deg)
+          margin-left 5px
+        span.next
+          margin-right 5px
+      thead
+        tr
+          th
+            font-weight 600
+            padding-top 10px
+            text-transform uppercase
+      th,
+      td
+        text-align center
+        height 35px
+        width 35px
+      td.off
+        color #b3b3b3
+      td.select
+        border 2px solid #ff4949
+        rounded-corners(200px)
+  .agenda
+    ul.agenda-items
+      margin 30px auto 0 auto
+
+  
+//-----------------------------------------------------------
+// apply _only_ to viewports in the 768px-1023px range 
+//-----------------------------------------------------------
+//@media only screen and (min-width: 768px) and (max-width: 1023px)
+
+//-----------------------------------------------------------
+// apply for _every_ viewport at or above 1024px
+//-----------------------------------------------------------
+//@media screen and (min-width: 1024px)

@@ -1,0 +1,676 @@
+@import './common'
+@import './calendar-bgimg'
+
+
+// Markup for article pages
+
+// This is the navigation header
+// -----------------------------
+
+body 
+  border-right none
+  border-left none
+
+.heading
+  position relative
+  width 100%
+  clearfix()
+  .page-title
+    clear both
+    border-top 1px solid #CCC
+    font-size 200%
+    font-weight 200
+    padding 5px 0 0 0
+    text-align center
+
+  .theme-container
+    display none
+
+  a.menu-link
+    font-size 150%
+    margin 0 
+    padding 5px 0 5px 20px
+    display block
+    background #4999CF
+    color #FAFAFA
+    text-decoration none
+
+  nav[role=navigation]
+    clear both
+    -webkit-transition all 0.3s ease-out
+    -moz-transition all 0.3s ease-out
+    -ms-transition all 0.3s ease-out
+    -o-transition all 0.3s ease-out
+    transition all 0.3s ease-out
+
+  .js 
+    nav[role=navigation]
+      overflow hidden
+      max-height 0
+
+  nav[role=navigation].active
+    max-height 15em
+
+  nav[role=navigation] ul
+    margin 0
+    padding 0
+    text-align center
+    border-top 1px solid #808080
+
+  nav[role=navigation]
+    li
+      a
+        display block
+        color #222
+        font-size 100%
+        text-decoration none
+        text-transform uppercase
+        padding 40px 15px 20px 15px
+        border-bottom 1px solid #808080
+    li.theme-toggle
+      border-left 1px solid #222
+      border-right 1px solid #222
+      border-top 1px solid #222
+      display inline-block
+      float none
+      font-weight 600
+      width 120px
+      .theme-container
+        display none
+        position relative
+        .theme-popover-border-arrow
+          border-color transparent transparent #222 transparent
+          border-style solid
+          border-width 10px
+          height 0
+          width 0
+          position absolute
+          z-index 12
+          top -5px 
+          left 80px 
+        .theme-popover-arrow
+          border-color transparent transparent #333 transparent
+          border-style solid
+          border-width 10px
+          height 0
+          width 0
+          position absolute
+          z-index 12
+          top -4px
+          left 80px
+      .theme-popover
+        display block
+        box-shadow(0 2px 5px rgba(0, 0, 0, 0.2))
+        position absolute
+        top 15px
+        left 0
+        border 1px solid #222
+        background #333
+        rounded-corners(3px)
+        z-index 11
+        .themes
+          p
+            border-bottom 1px solid #222
+            cursor pointer
+            padding 10px 45px 10px 15px 
+            position relative
+            text-align left
+            color white
+            font-size 100%
+            text-decoration none 
+            text-transform none
+            font-weight 400
+            &:last-child
+              border-bottom none
+            .theme-select
+              background url(gray-check) 50% 50% no-repeat
+              background-size 15px
+              position absolute
+              top 5px 
+              right 5px 
+              height 25px
+              width 25px
+            &:hover
+              background #777
+
+  // Drop down menu
+  nav[role=navigation] ul 
+    margin 0 0 0 -0.25em
+    background #333
+    border 0
+  
+  nav[role=navigation] li a 
+    border 0
+    color #FAFAFA
+    padding 9px
+
+  nav[role=navigation] li a:hover,
+  nav[role=navigation] li a:focus 
+    -webkit-transition color 0.2s ease-in-out
+    color #0E527F
+    color rgba(14, 82, 127, 1)
+  .logo
+    float none 
+    width 100%
+    background #4999CF
+    height 100px
+    border-left 1px solid #CCC
+    h1
+      color #FFFFFF
+      font-family: "Avenir-Light", "Arial", sans serif; 
+      font-size 300%
+      font-weight 200
+      padding-top 30px
+      text-align center
+      position relative
+      .domain
+        color black
+        font-family: "Arial Narrow", Arial, sans-serif;
+        position relative
+        font-size 75%
+        font-weight 200
+        top -15px 
+        right 0 
+
+// End of navigation header
+
+// Article Markup
+// ---------------
+.article-container
+  margin 50px 50px 50px 50px
+  h2
+    font-size 300%
+    font-weight 200
+  .sample
+    margin-top 30px
+    .article-date
+      font-size 180%
+      font-weight 100
+      color #333
+      font-family "Helvetica"
+    p
+      margin-top 20px
+      font-size 150%
+      //font-family "Adelle"
+      font-family: "Hoefler Text", "Baskerville old face", Garamond, "Times New Roman", serif;
+      font-weight 400
+      color #777
+      line-height 1.5em
+      width 100%
+    img
+      width 50%
+      padding 25px 20px 5px 0
+    span.img-caption
+      display block
+      margin 0
+      padding 0
+      font-size 100%
+      color #777
+      font-style italic
+      width 50%
+
+// Self contained login markup - usually found with ads
+.login-container
+  display none
+  clearfix()
+  margin 0 auto
+  width 80%
+  .avatar-container
+    float left
+    width 20%
+    img.avatar
+      width 35px
+  .name
+    font-weight 600
+
+.line-separator
+  display none
+
+.recent-articles
+  display none
+
+.ad1
+  margin-bottom 25px
+
+footer
+  background #333
+  color white
+  font-size 110%
+  clearfix()
+  ul.footer-items
+    clearfix()
+    float left
+    text-align left
+    padding 0
+    li
+      float none
+      margin-left 12px
+      padding-top 5px
+      padding-bottom 5px
+      font-weight 600
+      text-align left
+  p
+    float right
+    padding-top 10px
+    margin-right 50px
+    padding-bottom 25px
+
+  .footer-logo
+    float right 
+    width 41.666%
+    background #4999CF
+    height 77px
+    h1
+      color #FFFFFF
+      font-family: "Avenir-Light", Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans serif; 
+      font-size 130%
+      font-weight 200
+      padding-top 30px
+      text-align center
+      position relative
+      .domain
+        color black
+        font-family: "Arial Narrow", Arial, sans-serif;
+        position relative
+        font-size 75%
+        font-weight 200
+        top -15px 
+        right 0 
+
+//-----------------------------------------------------------
+// apply for _every_ viewport >= 768px (until overridden)
+//-----------------------------------------------------------
+@media only screen and (min-width: 768px)
+
+  .heading
+    a.menu-link
+      display none
+    .logo
+      height 75px
+      h1
+        padding-top 15px
+    .page-title
+      font-size 200%
+      font-weight 200
+      padding 15px 0
+      border-bottom 1px solid #CCC
+
+  .js nav[role=navigation]
+    max-height none
+
+  nav[role=navigation] ul
+    margin 0 0 0 -0.25em
+    border 0
+
+  nav[role=navigation] li
+    display inline-block
+    //margin 0 0.25em
+
+  nav[role=navigation]
+    li
+      a
+        border 0
+    nav#menu
+      float left
+      width 73.333%
+      clearfix()
+      li
+        border-left 1px solid #333
+        float left
+        padding-right 30px
+        height 40px
+        position relative
+        &:first-child
+          border-left none
+        &:last-child
+          &:hover
+            background white
+            a
+              color #4999CF
+        &:hover
+          background #4999CF
+          a
+            color white
+        a
+          color #4999CF
+          font-weight 200
+          font-size 130%
+          text-decoration none
+          text-transform uppercase
+          padding-left 5px
+        span.theme-icon
+          background url(theme-toggle) 50% 50% no-repeat
+          background-size 20px
+          posititon absolute
+          top 0
+          right 5px
+          height 25px
+          width 25px
+
+  footer
+    background #333
+    color white
+    font-size 110%
+    clearfix()
+    ul.footer-items
+      clearfix()
+      text-align center
+      padding 0
+      float left
+      li
+        float left
+        margin-left 25px
+        padding-top 10px
+        padding-bottom 25px
+        font-weight 600
+    p
+      float right
+      padding-top 10px
+      margin-right 50px
+      padding-bottom 25px
+
+    .footer-logo
+      float right 
+      width 26.666%
+      background #4999CF
+      height 50px
+      h1
+        color #FFFFFF
+        font-family: "Avenir-Light", Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans serif; 
+        font-size 150%
+        font-weight 200
+        padding-top 17px
+        text-align center
+        position relative
+        .domain
+          color black
+          font-family: "Arial Narrow", Arial, sans-serif;
+          position relative
+          font-size 75%
+          font-weight 200
+          top -15px 
+          right 0 
+
+//-----------------------------------------------------------
+// apply for _every_ viewport >= 1024px (until overridden)
+//-----------------------------------------------------------
+@media only screen and (min-width: 1024px)
+
+  // Article Markup
+  .heading
+    width 100%
+    .page-title
+      clear both
+      border-top 1px solid #CCC
+      font-size 300%
+      font-weight 100
+      padding 10px 0 10px 0 
+      text-align center
+      border-bottom none
+      font-family "Avenir-Book"
+    
+    nav#menu
+      float left
+      width 73.333%
+      clearfix()
+      border-bottom 1px solid #CCC
+      position relative
+      li
+        border-left 1px solid #CCC
+        float left
+        padding-right 24px
+        height 40px
+        position relative
+        &:first-child
+          border-left none
+        &:hover
+          background #4999CF
+          a
+            color white
+        &:last-child
+          background -webkit-linear-gradient(top,white 0%,#F4F4F4 100%)
+          border-right 1px solid #CCC
+          cursor pointer
+          width 190px
+          &:hover
+            background -webkit-linear-gradient(top, #F4F4F4, #E3E3E3 100%)
+          a
+            color #777
+            border-right 1px solid #CCC
+            //text-transform none
+        a
+          color #4999CF
+          font-weight 200
+          font-size 150%
+          text-decoration none
+          text-transform uppercase
+          padding-left 5px
+        span.theme-icon
+          background url(theme-toggle) 50% 50% no-repeat
+          background-size 15px
+          position absolute
+          top 7px
+          right 0 
+          height 25px
+          width 25px
+      li.theme-toggle
+        display block
+        border-top none
+        .theme-container
+          display none
+          position relative
+          .theme-popover-border-arrow
+            border-color transparent transparent #CCC transparent
+            border-style solid
+            border-width 10px
+            height 0
+            width 0
+            position absolute
+            z-index 12
+            top -5px 
+            left 160px 
+          .theme-popover-arrow
+            border-color transparent transparent whitesmoke transparent
+            border-style solid
+            border-width 10px
+            height 0
+            width 0
+            position absolute
+            z-index 12
+            top -4px
+            left 160px
+        .theme-popover
+          display block
+          box-shadow(0 2px 5px rgba(0, 0, 0, 0.2))
+          position absolute
+          top 15px
+          left 0
+          border 1px solid #CCC
+          background whitesmoke
+          rounded-corners(3px)
+          z-index 11
+          .themes
+            p
+              border-bottom 1px solid #CCC
+              cursor pointer
+              padding 10px 115px 10px 15px 
+              position relative
+              text-align left
+              color #777
+              font-size 120%
+              text-decoration none 
+              text-transform none
+              font-weight 400
+              &:last-child
+                border-bottom none
+              .theme-select
+                background url(gray-check) 50% 50% no-repeat
+                background-size 15px
+                position absolute
+                top 5px 
+                right 5px 
+                height 25px
+                width 25px
+              &:hover
+                background #E1E1E1
+
+    .logo
+      float left
+      width 26.666%
+      background #4999CF
+      height 100px
+      border-left 1px solid #CCC
+      h1
+        color #FFFFFF
+        //font-family: "Arial Narrow", Arial, sans-serif;
+        font-family: "Avenir-Light", Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans serif;
+        font-size 350%
+        font-weight 200
+        padding-top 25px
+        text-align center
+        position relative
+        .domain
+          color black
+          font-family: "Arial Narrow", Arial, sans-serif;
+          position relative
+          font-size 75%
+          font-weight 200
+          top -15px 
+          right 0 
+
+  .article-container
+    margin 50px 50px 50px 50px
+    h2
+      font-size 300%
+      font-weight 200
+    .sample
+      margin-top 30px
+      .article-date
+        font-size 180%
+        font-weight 100
+        color #333
+        font-family "Helvetica"
+      p
+        margin-top 20px
+        font-size 150%
+        font-family "Adelle"
+        //font-family: "Hoefler Text", "Baskerville old face", Garamond, "Times New Roman", serif;
+        font-weight 400
+        color #777
+        line-height 1.5em
+        width 80%
+      img
+        width 50%
+        padding 25px 20px 5px 0
+      span.img-caption
+        display block
+        margin 0
+        padding 0
+        font-size 100%
+        color #777
+        font-style italic
+        width 50%
+
+  .line-separator
+    display block
+
+  // Self contained login markup - usually found with ads
+  .login-container
+    display block
+    clearfix()
+    margin 0 auto
+    width 80%
+    .avatar-container
+      float left
+      width 20%
+      img.avatar
+        width 35px
+    .name
+      font-weight 600
+
+  .recent-articles
+    display block
+    margin 0 auto
+    width 90.75%
+    h1
+      font-size 250%
+      color #4999CF
+      text-align left
+      font-weight 200
+      margin-bottom 20px
+    h2
+      font-size 150%
+      font-weight 400
+      color #333
+      text-align left
+      margin 10px 0
+    p
+      font-size 110%
+      font-weight 400
+      color #777
+      width 80%
+    .more-link
+      text-decoration none
+      color #4999CF
+      font-size 110%
+
+  footer
+    background #333
+    color white
+    font-size 110%
+    clearfix()
+    ul.footer-items
+      float left
+      clearfix()
+      text-align center
+      padding 0
+      li
+        float left
+        margin-left 25px
+        padding-top 10px
+        padding-bottom 25px
+        font-weight 600
+    p
+      float right
+      padding-top 10px
+      margin-right 50px
+      padding-bottom 25px
+
+    .footer-logo
+      float right 
+      width 26.666%
+      background #4999CF
+      height 50px
+      h1
+        color #FFFFFF
+        font-family: "Avenir-Light", Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans serif; 
+        font-size 150%
+        font-weight 200
+        padding-top 17px
+        text-align center
+        position relative
+        .domain
+          color black
+          font-family: "Arial Narrow", Arial, sans-serif;
+          position relative
+          font-size 75%
+          font-weight 200
+          top -15px 
+          right 0 
+
+
+//-----------------------------------------------------------
+// apply for _every_ viewport >= 1154px (until overridden)
+//-----------------------------------------------------------
+@media only screen and (min-width: 1154px)
+
+  body 
+    border-left 1px solid #CCC
+    border-right 1px solid #CCC
+    margin 0 auto
+    width 1200px
+
+
+
+
+

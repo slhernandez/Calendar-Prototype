@@ -1,4 +1,6 @@
 Calendar-Prototype
 ==================
 
-Responsive calendar control
+Responsive Calendar Control
+
+![Responsive Calendar](public/images/Calendar.jpg "Responsive Calendar")

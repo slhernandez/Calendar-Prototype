@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Calendar rendering sandbox</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="/global.css">
+    <script src="/init.js"></script>
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="cal-heading">
+        <h1>SpaceCraft Business Calendar</h1>
+      </div>
+      <div class="cal-grid grid-pad">
+        <div class="calendar-container col-1-3">
+          <table class="calendar">
+            <caption>
+              <span class="prev"></span>
+              <span class="next"></span>
+              January 2013
+            </caption>
+            <thead>
+              <tr>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+                <th>Sun</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="off">30</td>
+                <td class="off">31</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td class="select">7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+              </tr>
+              <tr>
+                <td>13</td>
+                <td>14</td>
+                <td>15</td>
+                <td>16</td>
+                <td>17</td>
+                <td>18</td>
+                <td>19</td>
+              </tr>
+              <tr>
+                <td>20</td>
+                <td>21</td>
+                <td>22</td>
+                <td>23</td>
+                <td>24</td>
+                <td>25</td>
+                <td>26</td>
+              </tr>
+              <tr>
+                <td>27</td>
+                <td>28</td>
+                <td>29</td>
+                <td>30</td>
+                <td>31</td>
+                <td class="off">1</td>
+                <td class="off">2</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="filter">
+            <h3>Staff</h3>
+            <ul class="staff">
+              <li><span class="avatar evan"></span><p>Evan Williams</p></li>
+              <li>
+                <span class="avatar molly"></span>
+                <p>Molly Sims</p>
+                <div class="highlight"></div>
+                <div class="bio-popover-container">
+                  <div class="bio-popover-border-arrow"></div>
+                  <div class="bio-popover-arrow"></div>
+                  <div class="bio-popover">
+                    <div class="name">
+                      <span class="popover-avatar"></span>
+                      <h3>Molly Sims</h3>
+                      <p class="org">Position: Yoga Instructor</p>
+                      <span class="bio-label">Bio</span>
+                      <p class="popover-bio">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li><span class="avatar patrick"></span><p>Patrick Simpson</p></li>
+              <li><span class="avatar henry"></span><p>Henry Clemons</p></li>
+            </ul>
+            <a class="more-btn" href="#">More</a>
+          </div>
+        </div>
+        <div class="col-2-3 agenda">
+          <div class="midsize-calendar">
+            <table class="calendar">
+              <caption>
+                <span class="prev"></span>
+                <span class="next"></span>
+                January 2013
+              </caption>
+              <thead>
+                <tr>
+                  <th>Mon</th>
+                  <th>Tues</th>
+                  <th>Wed</th>
+                  <th>Thur</th>
+                  <th>Fri</th>
+                  <th>Sat</th>
+                  <th>Sun</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="off"><h3 class="day">30</h3></td>
+                  <td class="off"><h3 class="day">31</h3></td>
+                  <td><h3 class="day">1</h3></td>
+                  <td><span class="occupied"><h3 class="day">2</h3></span></td>
+                  <td><h3 class="day">3</h3></td>
+                  <td><h3 class="day">4</h3></td>
+                  <td><h3 class="day">5</h3></td>
+                </tr>
+                <tr>
+                  <td><h3 class="day">6</td>
+                  <td><span class="occupied"><h3 class="day">7</h3></span></td>
+                  <td><span class="occupied"><h3 class="day">8</h3></span></td>
+                  <td><span class="occupied"><h3 class="day">9</h3></span></td>
+                  <td><span class="occupied"><h3 class="day">10</h3></span></td>
+                  <td><span class="occupied"><h3 class="day">11</h3></span></td>
+                  <td><span class="occupied"><h3 class="day">12</h3></span></td>
+                </tr>
+                <tr>
+                  <td><h3 class="day">13</h3></td>
+                  <td><h3 class="day">14</h3></td>
+                  <td><h3 class="day">15</h3></td>
+                  <td><h3 class="day">16</h3></td>
+                  <td><h3 class="day">17</h3></td>
+                  <td><span class="occupied"><h3 class="day">18</h3></span></td>
+                  <td><h3 class="day">19</h3></td>
+                </tr>
+                <tr>
+                  <td><h3 class="day">20</h3></td>
+                  <td><h3 class="day">21</h3></td>
+                  <td><span class="occupied"><h3 class="day">22</h3></span></td>
+                  <td><span class="occupied"><h3 class="day">23</h3></span></td>
+                  <td><h3 class="day">24</h3></td>
+                  <td><span class="occupied"><h3 class="day">25</h3></span></td>
+                  <td><span class="occupied"><h3 class="day">26</h3></span></td>
+                </tr>
+                <tr>
+                  <td><h3 class="day">27</h3></td>
+                  <td><h3 class="day">28</h3></td>
+                  <td><h3 class="day">29</h3></td>
+                  <td><span class="occupied"><h3 class="day">30</h3></span></td>
+                  <td><span class="occupied"><h3 class="day">31</h3></span></td>
+                  <td class="off"><h3 class="day">1</h3></td>
+                  <td class="off"><h3 class="day">2</h3></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mobile-week">
+            <div class="mobile-heading">January 2013</div>
+            <ul class="week">
+              <li><p class="mobile-day">Mon</p><p class="mobile-date">6</p></li>
+              <li class="focus"><p class="mobile-day">Tues</p><p class="mobile-date">7</p></li>
+              <li><p class="mobile-day">Wed</p><p class="mobile-date">8</p></li>
+              <li><p class="mobile-day">Thur</p><p class="mobile-date">9</p></li>
+              <li><p class="mobile-day">Fri</p><p class="mobile-date">10</p></li>
+            </ul>
+          </div>
+          <h1 class="full-size-date">Tuesday, January 7, 2013</h1>
+          <ul class="agenda-items">
+            <li class="item-date">Tuesday<span class="full-date">January, 7, 2013</span></li>
+            <li class="agenda-item"><span class="plus-icon"></span>Yogo appointment<span class="agenda-time">10:00 AM to 11:00 AM</span></li>
+            <li class="agenda-item"><span class="plus-icon"></span>Muscular Endurance<span class="agenda-time">12:00 PM to 2:00 PM</span></li>
+            <li class="item-date">Wednesday<span class="full-date">January, 8, 2013</span></li>
+            <li class="agenda-item"><span class="plus-icon"></span>Coffee with Jeff<span class="agenda-time">10:00 AM to 11:00 AM</span></li>
+            <li class="agenda-item"><span class="plus-icon"></span>Client call for rescheduling<span class="agenda-time">10:00 AM to 11:00 AM</span></li>
+            <li class="agenda-item select">
+              <span class="minus-icon"></span>Monthly all-hands meeting.<span class="agenda-time">10:00 AM to 11:00 AM</span>
+              <div class="expand-item">
+                <p>Start <span class="date">01/08/2013</span><span class="time">10:00 AM</span></p>
+                <p>End <span class="date">01/08/2013</span><span class="time">11:00 AM</span></p>
+                <p>Repeat <span class="repeat">Every week</span></p>
+                <p>End <span class="end">Never</span></p>
+                <p>Location <span class="conference">Conference Room</span></p>
+                <p class="notes-label">Notes:</p>
+                <p class="notes">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              </div>
+            </li>
+            <li class="item-date">Thursday<span class="full-date">January, 9, 2013</span></li>
+            <li class="agenda-item"><span class="plus-icon"></span>Coffee with Jeff<span class="agenda-time">10:00 AM to 11:00 AM</span></li>
+            <li class="agenda-item"><span class="plus-icon"></span>Client call for rescheduling<span class="agenda-time">1:00 PM to 3:30 PM</span></li>
+            <li class="agenda-item"><span class="plus-icon"></span>Monthly all-hands meeting.<span class="agenda-time">3:30 PM to 4:00 PM</span></li>
+            <li class="agenda-item"><span class="plus-icon"></span>Customer call to go over the design proposal.<span class="agenda-time">3:30 PM to 4:00 PM</span></li>
+            <li class="agenda-item"><span class="plus-icon"></span>Dinner with some former co-workers at the Hula Hut.<span class="agenda-time">7:30 PM to 10:00 PM</span></li>
+            <li class="item-date">Friday<span class="full-date">January, 10, 2013</span></li>
+            <li class="agenda-item"><span class="plus-icon"></span>Coffee with Jeff<span class="agenda-time">10:00 AM to 11:00 AM</span></li>
+            <li class="agenda-item"><span class="plus-icon"></span>Need to gather statistics for tomorrows meeting.<span class="agenda-time">1:00 PM to 3:30 PM</span></li>
+            <li class="agenda-item"><span class="plus-icon"></span>Monthly all-hands meeting.<span class="agenda-time">3:30 PM to 4:00 PM</span></li>
+            <li class="item-date">Saturday<span class="full-date">January, 11, 2013</span></li>
+            <li class="agenda-item"><span class="plus-icon"></span>Coffee with Jeff<span class="agenda-time">10:00 AM to 11:00 AM</span></li>
+            <li class="agenda-item"><span class="plus-icon"></span>Need to gather statistics for tomorrows meeting.<span class="agenda-time">1:00 PM to 3:30 PM</span></li>
+            <li class="agenda-item"><span class="plus-icon"></span>Monthly all-hands meeting.<span class="agenda-time">3:30 PM to 4:00 PM</span></li>
+            <li class="item-date">Sunday<span class="full-date">January, 12, 2013</span></li>
+            <li class="agenda-item"><span class="plus-icon"></span>Coffee with Jeff<span class="agenda-time">10:00 AM to 11:00 AM</span></li>
+            <li class="agenda-item"><span class="plus-icon"></span>Need to gather statistics for tomorrows meeting.<span class="agenda-time">1:00 PM to 3:30 PM</span></li>
+            <li class="agenda-item"><span class="plus-icon"></span>Monthly all-hands meeting.<span class="agenda-time">3:30 PM to 4:00 PM</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script src="/vendor.js"></script>
+    <script src="/ready.js"></script>
+  </body>
+</html>

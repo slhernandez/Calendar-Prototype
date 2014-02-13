@@ -1,0 +1,142 @@
+@import './common'
+@import './calendar-bgimg'
+
+// Markup for Ad mockup
+
+[class*='ad-']
+  float none
+
+[class*='ad-']:last-of-type
+  padding-right 0
+
+.grid:after
+  content ""
+  display table
+  clear both
+
+.ad-1-4
+  width 100% 
+
+.ad-3-4
+  width 100%
+
+.line-separator
+  border-bottom 1px solid #CCC
+  margin 25px auto
+  width 90%
+
+// Ad that is standard 300x250
+.ad1
+  background #333
+  margin .031% auto
+  height 250px
+  width 93.75%
+  p
+    font-size 300%
+    text-align center
+    font-weight 600
+    color #FFFFFF
+    padding-top 100px
+
+// Ad that is 300x600
+.ad2
+  background #333
+  margin .031% auto
+  height 600px
+  width 93.75%
+  p
+    font-size 300%
+    text-align center
+    font-weight 600
+    color #FFFFFF
+    padding-top 250px
+  
+
+//-----------------------------------------------------------
+//apply _only_ to viewports in the 568px-1023px range 
+//-----------------------------------------------------------
+@media only screen and (min-width: 568px) and (max-width: 1023px)
+ 
+  [class*='ad-']
+    float none
+
+  [class*='ad-']:last-of-type
+    padding-right 0
+
+  .ad-1-4
+    width 100%
+
+  .ad-3-4
+    width 100%
+
+  .line-separator
+    display none
+    border-bottom 1px solid #CCC
+    margin 25px auto
+    width 90%
+
+  .ad1
+    background #333
+    margin 25px auto
+    height 250px
+    width 39.75%
+    p
+      font-size 300%
+      text-align center
+      font-weight 600
+      color #FFFFFF
+      padding-top 100px
+
+  .ad2
+    background #333
+    margin 25px auto
+    height 600px
+    width 39.75%
+    p
+      font-size 300%
+      text-align center
+      font-weight 600
+      color #FFFFFF
+      padding-top 250px
+
+//-----------------------------------------------------------
+// apply for _every_ viewport >= 768px (until overridden)
+//-----------------------------------------------------------
+@media only screen and (min-width: 1024px)
+  
+  [class*='ad-']
+    float left
+
+  [class*='ad-']:last-of-type
+    padding-right 0
+
+  .ad-1-4
+    width 26.666%
+
+  .ad-3-4
+    border-right 1px solid #CCC
+    min-height 1200px
+    width 73.333%
+  
+  .heading
+    width 100%
+    ul#menu
+      li
+        padding-right 75px
+        height 40px
+        a
+          font-weight 200
+          font-size 200%
+          padding-left 10px
+
+    .logo
+      width 26.666%
+      background #4999CF
+      height 150px
+      h1
+        font-size 250%
+        font-weight 200
+        .domain
+          font-size 80%
+          font-weight 200
+

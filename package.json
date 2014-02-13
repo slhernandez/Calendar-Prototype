@@ -1,0 +1,22 @@
+{
+  "name": "calendar-rendering",
+  "description": "SpaceCraft calendar rendering sandbox",
+  "version": "0.0.1",
+  "author": "David Wood <david@gospacecraft.com>",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/spacecraftinc/calendar-rendering.git"
+  },
+  "keywords": [],
+  "dependencies": {
+    "express": "3.0.x",
+    "ejs": "0.8.x",
+    "stylus": "0.30.x",
+    "nib": "0.8.x"
+  },
+  "main": "./app.js",
+  "engines": {
+    "node": ">= 0.8.2"
+  },
+  "private": true
+}

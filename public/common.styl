@@ -1,0 +1,114 @@
+@import 'nib/reset'
+@import 'nib/gradients'
+@import 'nib/vendor'
+@import 'nib/clearfix'
+
+/* Reset */
+global-reset()
+reset-html5()
+
+/* Variables */
+karnak-family = Rockwell, Georgia, serif
+light-family = 'Helvetica Neue', Helvetica, Arial, sans-serif
+regular-family = 'Helvetica Neue', Helvetica, Arial, sans-serif
+bold-family = 'Helvetica Neue', Helvetica, Arial, sans-serif
+border-radius-size = 6px
+error-color = #ff0f0f
+standard-focus-outline = thin dotted #999
+code-family = Monaco, Menlo, 'Ubuntu Mono', 'Droid Sans Mono', Consolas, monospace;
+form-family = "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, sans-serif; 
+
+/* Font sizes */
+font-size-8 = 66.6667%
+font-size-9 = 75%
+font-size-10 = 83%
+font-size-11 = 91.7%
+font-size-12 = 100%
+font-size-13 = 108.33%
+font-size-14 = 116.7%
+font-size-16 = 133.3%
+font-size-18 = 150%
+font-size-20 = 166.7%
+font-size-22 = 183.33%
+font-size-24 = 200%
+font-size-40 = 333.3%
+font-size-50 = 416.67%
+
+/* Colors */
+base-text-color = #333333
+lighter-text-color = #4d4d4d
+
+/* Fonts */
+regular()
+  font-face(regular-family, 0.52, normal)
+
+karnak()
+  font-face(karnak-family, 0.47, 500)
+
+light()
+  font-face(light-family, 0.53, 200)
+
+bold()
+  font-face(bold-family, 0.54, bold)
+
+/* Mixins */
+font-face(family, size-adjust, font-weight)
+  font-family family
+  font-size-adjust size-adjust
+  font-weight font-weight
+  font-style normal
+  -webkit-font-smoothing antialiased
+  -moz-font-smoothing antialiased
+  font-smoothing antialiased
+
+gradient-rounded-corners()
+  .modern &
+    rounded-corners(arguments)
+
+rounded-corners()
+  if length(arguments) > 0
+    border-radius(arguments)
+  else
+    border-radius(border-radius-size)
+
+gradient-fill(top-color, bottom-color)
+  background bottom-color
+  background linear-gradient(top, top-color, bottom-color)
+  ie-gradient(top-color, bottom-color)
+
+ltr-gradient(left-color, right-color)
+  background left-color
+  background linear-gradient(left, left-color, right-color)
+  ie-ltr-gradient(left-color, right-color)
+
+ie-gradient(top-color, bottom-color)
+  .ie9 &
+    filter 'progid:DXImageTransform.Microsoft.Alpha(opacity=100) progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=%s, endColorstr=%s)' % (argb(top-color) argb(bottom-color))
+    -ms-filter 'progid:DXImageTransform.Microsoft.Alpha(opacity=100) progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=%s, endColorstr=%s)' % (argb(top-color) argb(bottom-color))
+
+ie-ltr-gradient(left-color, right-color)
+  .ie9 &
+    filter 'progid:DXImageTransform.Microsoft.gradient(GradientType=1,startColorstr=%s, endColorstr=%s)' % (argb(left-color) argb(right-color))
+    -ms-filter 'progid:DXImageTransform.Microsoft.gradient(GradientType=1,startColorstr=%s, endColorstr=%s)' % (argb(left-color) argb(right-color))
+
+clear-gradient(color)
+  background color
+  .ie9 &
+    filter: none
+    -ms-filter: none
+
+single-line(size)
+  font-size size
+  line-height 100%
+
+/* Global */
+html
+  overflow-y scroll
+
+body
+  regular()
+  font-size 12px
+  line-height 1.25
+  color base-text-color
+  margin 0 auto
+
